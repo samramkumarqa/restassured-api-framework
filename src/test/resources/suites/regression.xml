@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Classes run in parallel; methods within a class stay sequential so per-class cleanup is safe. -->
+<suite name="API Regression" parallel="classes" thread-count="4">
+    <test name="Restful-Booker live">
+        <packages>
+            <package name="com.qa.tests.live"/>
+        </packages>
+    </test>
+    <test name="Client against WireMock">
+        <packages>
+            <package name="com.qa.tests.mock"/>
+        </packages>
+    </test>
+</suite>

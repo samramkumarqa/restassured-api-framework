@@ -1,0 +1,6 @@
+[
+  { "id": "BK-01", "totalprice": 150,  "depositpaid": true,  "nights": 2,  "additionalneeds": "Breakfast" },
+  { "id": "BK-02", "totalprice": 999,  "depositpaid": false, "nights": 7,  "additionalneeds": "Airport transfer" },
+  { "id": "BK-03", "totalprice": 0,    "depositpaid": true,  "nights": 1,  "additionalneeds": null },
+  { "id": "BK-04", "totalprice": 4200, "depositpaid": true,  "nights": 21, "additionalneeds": "Late checkout" }
+]

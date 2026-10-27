@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Live API" parallel="classes" thread-count="4">
+    <test name="Restful-Booker live">
+        <packages>
+            <package name="com.qa.tests.live"/>
+        </packages>
+    </test>
+</suite>
