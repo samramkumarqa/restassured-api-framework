@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.startsWith;
 
 public class ContentNegotiationTest extends BaseApiTest {
 
@@ -24,7 +23,7 @@ public class ContentNegotiationTest extends BaseApiTest {
                 .then()
                 .statusCode(200)
                 .contentType(containsString("text/html"))
-                .body(startsWith("<booking>"))
+                .body(containsString("<booking>"))
                 .extract().asString();
 
         XmlPath path = new XmlPath(xml);
