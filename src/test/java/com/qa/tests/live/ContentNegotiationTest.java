@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.startsWith;
 
 public class ContentNegotiationTest extends BaseApiTest {
 
@@ -17,10 +18,13 @@ public class ContentNegotiationTest extends BaseApiTest {
         Booking booking = BookingFactory.booking();
         int id = createBooking(booking).bookingid();
 
+        // The body is XML, but Restful-Booker labels it "text/html" (Express's default for a string body),
+        // so the test checks the content itself and pins the header as a known quirk.
         String xml = bookings.get(id, Specs.XML)
                 .then()
                 .statusCode(200)
-                .contentType(containsString("xml"))
+                .contentType(containsString("text/html"))
+                .body(startsWith("<booking>"))
                 .extract().asString();
 
         XmlPath path = new XmlPath(xml);

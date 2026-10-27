@@ -38,6 +38,7 @@ Restful-Booker behaves differently from a typical REST API, and the tests assert
 | Update or delete a booking that doesn't exist | **405** |
 | Successful delete | **201** |
 | `Accept` header other than an exact supported value | **418** |
+| Booking requested as XML | XML body, but `Content-Type: text/html` |
 
 The last one matters for Rest Assured: `ContentType.JSON` sends several types in `Accept`, which this API rejects, so the shared spec sets `Accept: application/json` literally.
 
